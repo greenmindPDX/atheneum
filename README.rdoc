@@ -11,10 +11,12 @@ application up and running.
 * Configuration
 
 * Database creation, Init:
+
 ```
 brew install postgresql
 
 rails new atheneum -d postgresql
+
 ```
 
 * How to run the test suite
