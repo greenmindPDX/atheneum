@@ -1,0 +1,45 @@
+== REAMDE
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+
+* Runs on RoR 4.2
+
+* System dependencies
+
+* Configuration
+
+* Database creation, Init:
+
+    
+brew install postgresql
+
+rails new atheneum -d postgresql
+
+    
+    
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
+
+MOAR
+
+This application is meant to track applications (clever) for creative writing students.
+
+FEATURES
+-students, faculty, etc can register, login, logout
+
+-uses Statesman gem to handle application state (pending, invited, declined,etc)
+
+-once application has letter of recommendation, writing sample in plaintext, 
+
+-materials are converted asynch through Sidekiq
