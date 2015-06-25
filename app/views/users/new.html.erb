@@ -1,0 +1,8 @@
+<%= form_for @user, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+Create a user
+First name:  <%= f.text_field :first_name %><br>
+Last name:  <%= f.text_field :last_name %><br>
+Email (this will be your login)   <%= f.text_field :login_email %><br>
+PWD   <%= f.text_field :password %><br>
+  <%= f.submit "Create" %>
+<% end %>

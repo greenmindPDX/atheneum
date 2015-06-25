@@ -1,0 +1,22 @@
+<%= form_for @app, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+Genre  <%= f.text_field :genre %> <br/>
+Best 3 films <%= f.text_field :best_film %><br/>
+Writing Sample<br/>
+<%= f.text_area :writing_sample, size: "60x12" %><br/>
+Community Role<br/>
+<%= f.text_area :community_role, size: "60x12" %><br/>
+Conversation starter?
+ <%= f.text_field :conversation_starter %>  <br/>,
+ How are next 11 months at Atheneum essential to your writing?<br/>
+ <%= f.text_area :essential_to_writing %> <br/>,
+Family Hero <%= f.text_field :family_hero %> <br/>,
+Favorite Quiet Meal <%= f.text_field :favorite_quiet_meal %> <br/>,
+ Fiction Character <%= f.text_field :fiction_character %> <br/>,
+ Film Character<%= f.text_field :film_character %>  <br/>,
+Head turning Fact <%= f.text_field :head_turner %>  <br/>,
+ 3 words to describe you <%= f.text_field :personality_word %> <br/>,
+Political Hero <%= f.text_field :political_hero %> political_hero: <br/>,
+	 <%= f.text_field :studied_with %> studied_with: <br/>,
+What Time period?  <%= f.text_field :time_period %> <br/>
+  <%= f.submit "Create" %>
+<% end %>

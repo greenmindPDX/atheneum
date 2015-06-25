@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Atheneum</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<h1>Login or Register</h1>
+ 
+You can either login here or register using this link.
+ 
+<br>
+ <%= form_for @user, url: {action: "login"}, html: {class: "nifty_form"} do |f| %>
+Enter the email you registered with and your password.
+
+
+<% end %>
+</body>
+</html>

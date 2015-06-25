@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Atheneum</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<h1>Listing Applications</h1>
+ 
+<table>
+  <tr>
+    <th>Genre</th>
+    <th>Summary</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <!--     <td><percent= link_to "Edit", #edit_app_path(app) percent></td>-->
+ 
+<% @applications.each do |app| %>
+  <tr>
+
+    <td><%= app.genre %></td>
+    <td><%= app.family_hero %></td>
+    <td><%= link_to "Show", app %></td>
+    <td><%= link_to "Remove", app, method: :delete, data: { confirm: "Are you sure?" } %></td>
+  </tr>
+<% end %>
+</table>
+ 
+<br>
+ 
+</body>
+</html>
