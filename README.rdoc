@@ -3,17 +3,16 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+* Runs on RoR 4.2
 
 * System dependencies
 
 * Configuration
 
-* Database creation
-
-* Database initialization
+* Database creation, Init:
+brew install postgresql
+rails new atheneum -d postgresql
 
 * How to run the test suite
 
@@ -26,3 +25,7 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+MOAR
+This application is meant to track applications (clever) for creative writing students.
+FEATURES
