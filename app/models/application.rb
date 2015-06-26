@@ -6,8 +6,6 @@ class Application < ActiveRecord::Base
 	has_many :application_transitions
 	has_many :comments
 	validates :genre, presence: true
-	validates :status, presence: true
-
 	#only complete if the writing sample is here and the reference has a path, 
 	#meaning the letter of rec is uploaded
 	#todo move to a concern
@@ -18,6 +16,34 @@ class Application < ActiveRecord::Base
 		else
 			false
 		end
+	end
+
+	def generate_letter
+		params = {}
+		if printable_recommendation?
+			params["application_id"] = self.id
+			params["doc_type"] = "letter"
+			params["content"] = self.recommendation_letter			
+			#PdfWorker.perform_async(params)
+		end
+	end
+
+	def generate_sample
+		params = {}
+		if printable_sample?
+			params["application_id"] = self.id
+			params["doc_type"] = "sample"
+			PdfWorker.perform_async(params)
+		end
+	end
+
+
+	def printable_recommendation?
+		true unless self.recommendation_letter.blank?
+	end
+
+	def printable_sample?
+		true unless self.writing_sample.blank?
 	end
 
   	def state_machine
