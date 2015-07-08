@@ -5,13 +5,15 @@ class ApplicationsController < ApplicationController
 		@app.save
 	end
 
+	# todo filter by existence of state machine
+	# 
 	def index
 		if session[:role] == "applicant"
-			#@applications = Application.where_not(status:'archive').where(user_id: sessions[user_id])
+			@applications = Application.where(user_id: sessions[user_id]).reject{ |r| r.state_machine.current_state=='archived'}
 		elsif session[:role] == "mentor"
-	    	@applications = Application.where.not(status:'archive').where(genre: session[:genre]) #where status!=archive
+			@applications = Application.where(genre:'fiction').reject{ |r| r.state_machine.current_state=='archived'}
 		elsif session[:role] == 'admin'	
-	    	@applications = Application.where.not(status:'archive') #where status!=archive
+	    	@applications = Application.all.reject{ |r| r.state_machine.current_state=='archived'} #where status!=archive
 		end
 	end
 
