@@ -31,14 +31,17 @@ gem 'sidekiq'
 gem 'statesman'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+# Use Faye for notifications, with Thin
+gem 'faye'
+gem 'private_pub' 
+#gem 'thin'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
+  gem "rails-erd"
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

@@ -5,10 +5,24 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+<% subscription="/messages/public" %>
+<%= subscribe_to subscription %>
 </head>
 <body>
+<script type="text/javascript" charset="utf-8">
+  PrivatePub.subscribe("<%= subscription %>", function(data) {
+    $('<p></p>').html(data.chat_message).appendTo('#chat_room');
+  });
+</script>
+
 <h1>Welcome to the Atheneum</h1>
 You can either <a href=signin>login</a> to complete an application or <a href=users/new>register</a> using this link.
+
+<div class="chat_container">
+  <div id="chat_room">
+    <p class="alert"> Welcome to the chat room ! </p>
+  </div>
+</div>
  
 <br>
 

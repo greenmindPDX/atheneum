@@ -1,4 +1,5 @@
 class Application < ActiveRecord::Base
+	#include Appliable
 	include Statesman::Adapters::ActiveRecordQueries
 
 	belongs_to :user
