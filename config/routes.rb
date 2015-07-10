@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get "signout" => "auth#signout"
   post "signin" => "auth#login"
   get 'users/new'
+  resources :his
   post 'users/create'
   get '/applications/:id', to: 'applications#show', as: 'app'
   # Example resource route with options:

@@ -34,7 +34,7 @@ gem 'statesman'
 # Use Faye for notifications, with Thin
 gem 'faye'
 gem 'private_pub' 
-#gem 'thin'
+gem 'thin'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
